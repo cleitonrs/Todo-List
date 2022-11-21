@@ -11,7 +11,7 @@
   --blue-dark: #1e6f9f;
 
   --purple: #8284fa;
-  --purple-dark: #5e60ce;
+  --purple-dark: #5e60ce;relative
 
   --danger: #e25858;
 }
@@ -20,8 +20,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  background: #454545;
+  background: var(--gray-600);
+  color: var(--gray-100);
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
 }

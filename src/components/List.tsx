@@ -6,9 +6,10 @@ import { TodosType } from '../App'
 
 interface TodosProps {
   todos: TodosType[]
+  onDeleteTodo: (todoId: string) => void
 }
 
-export function List({ todos }: TodosProps ) {
+export function List({ todos, onDeleteTodo }: TodosProps ) {
   const todosCount = todos.length
   const completedTodos = todos.filter((todo) => todo.isCompleted).length
 
@@ -28,14 +29,14 @@ export function List({ todos }: TodosProps ) {
 
       <div className={styles.list}>
         {todos.map((todo) => (
-          <div className={styles.task} key={todo.id}>
+          <div className={styles.task} key={todo.id} >
             <button className={styles.check}>
               <img src={check} alt="" />
             </button>
             <p>
               {todo.title}
             </p>
-            <button className={styles.delete}>
+            <button className={styles.delete} onClick={() => onDeleteTodo(todo.id)}>
               <TbTrash size={20} />
             </button>
           </div>  

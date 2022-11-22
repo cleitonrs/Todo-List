@@ -35,10 +35,15 @@ export function App() {
     ])
   }
 
+  function deleteTodo(todoId: string) {
+    const newTodos = todos.filter((todo) => todo.id !== todoId )
+    setTodos(newTodos)
+  }
+
   return (
     <>
       <Header onAddTodo={addTodo} />
-      <List todos={todos} />
+      <List todos={todos} onDeleteTodo={deleteTodo} />
     </>
   )
 }

@@ -44,10 +44,23 @@ export function App() {
     setTodos(newTodos)
   }
 
+  function toggleCompletedTodo(todoId: string) {
+    const newTodos = todos.map((todo) => {
+      if (todo.id === todoId) {
+        return {
+          ...todo,
+          isCompleted: !todo.isCompleted
+      }
+    }
+      return todo
+    })
+    setTodos(newTodos)
+  }
+
   return (
     <>
       <Header onAddTodo={addTodo} />
-      <List todos={todos} onDeleteTodo={deleteTodo} />
+      <List todos={todos} onDeleteTodo={deleteTodo} onComplete={toggleCompletedTodo}/>
     </>
   )
 }

@@ -1,15 +1,17 @@
 import styles from './List.module.css'
 import check from '../assets/check.svg'
-import { TbClipboardText, TbTrash } from 'react-icons/tb'
-import { BsFillCheckCircleFill } from 'react-icons/bs'
+import checked  from '../assets/checked.svg'
+import clipboard from '../assets/clipboard.svg'
+import { TbTrash } from 'react-icons/tb'
 import { TodosType } from '../App'
 
 interface TodosProps {
   todos: TodosType[]
   onDeleteTodo: (todoId: string) => void
+  onComplete: (todoId: string) => void
 }
 
-export function List({ todos, onDeleteTodo }: TodosProps ) {
+export function List({ todos, onDeleteTodo, onComplete }: TodosProps ) {
   const todosCount = todos.length
   const completedTodos = todos.filter((todo) => todo.isCompleted).length
 
@@ -30,10 +32,10 @@ export function List({ todos, onDeleteTodo }: TodosProps ) {
       <div className={styles.list}>
         {todos.map((todo) => (
           <div className={styles.task} key={todo.id} >
-            <button className={styles.check}>
-              <img src={check} alt="" />
+            <button className={styles.check} onClick={() => onComplete(todo.id)}>
+              {todo.isCompleted ? <img src={checked} /> : <img src={check} />}
             </button>
-            <p>
+            <p className={todo.isCompleted ? styles.textCompleted : ''}>
               {todo.title}
             </p>
             <button className={styles.delete} onClick={() => onDeleteTodo(todo.id)}>
@@ -42,6 +44,15 @@ export function List({ todos, onDeleteTodo }: TodosProps ) {
           </div>  
         ))}
 
+        {todos.length <= 0 && (
+          <div className={styles.noTodo}>
+            <img src={clipboard} />
+            <div>
+              <h3>Você ainda não tem tarefas cadastradas</h3>
+              <p>Crie tarefas e organize seus items a fazer</p>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )

@@ -25,6 +25,10 @@ export function App() {
   ])
 
   function addTodo(todoTitle: string) {
+    // Validation for no text or white space with regex
+    if (!todoTitle || /^\s*$/.test(todoTitle)){
+      return
+    }
     setTodos([
       ...todos,
       {

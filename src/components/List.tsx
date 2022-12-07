@@ -31,11 +31,11 @@ export function List({ todos, onDeleteTodo, onComplete }: TodosProps ) {
 
       <div className={styles.list}>
         {todos.map((todo) => (
-          <div className={styles.task} key={todo.id} >
+          <div className={`${styles.task} ${todo.isCompleted ? styles.textCompleted : ''}` } key={todo.id} >
             <button className={styles.check} onClick={() => onComplete(todo.id)}>
               {todo.isCompleted ? <img src={checked} /> : <img src={check} />}
             </button>
-            <p className={todo.isCompleted ? styles.textCompleted : ''}>
+            <p>
               {todo.title}
             </p>
             <button className={styles.delete} onClick={() => onDeleteTodo(todo.id)}>

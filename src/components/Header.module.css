@@ -1,6 +1,8 @@
 .header {
   position: relative;
-  background: var(--gray-700);
+  background: linear-gradient(90deg, 
+  var(--background-primary),
+  var(--background-secondary));
   height: 12.5rem;
   display: flex;
   align-items: center;
@@ -23,27 +25,30 @@
 .inputTaskForm input {
   height: 100%;
   flex: 1;
-  color: var(--gray-100);
-  background: var(--gray-500);
-  border: 1px solid var(--gray-700);
+  color: var(--white);
+  background: var(--black-less);
+  border: 2px solid var(--todo-button-primary);
   border-radius: 8px;
   padding: 1rem;
   font-size: 1rem;
 }
 
 .inputTaskForm input::placeholder {
-  color: var(--gray-300);
+  color: var(--placeholder-dark);
 }
 
 .inputTaskForm input:focus {
-  outline: 1px solid var(--purple-dark);
+  outline: 1px solid var(--todo-row-4-secondary);
 }
 
 .inputTaskForm button {
   height: 100%;
   padding:  1rem;
-  background: var(--blue-dark);
-  color: var(--gray-100);
+  background-image: linear-gradient(
+    90deg,
+    var(--todo-button-primary),
+    var(--todo-button-secondary));
+  color: var(--white);
   border: none;
   border-radius: 8px;
   display: flex;
@@ -55,7 +60,7 @@
 }
 
 .inputTaskForm button:hover {
-  background: var(--blue);
+  filter: brightness(0.9);
 }
 
 @media (min-width: 360px) {

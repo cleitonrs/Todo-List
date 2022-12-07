@@ -1,5 +1,35 @@
 :root {
-  --gray-100: #f2f2f2;
+  --background-primary: #3c8ce7;
+  --background-secondary: #00eaff;
+
+  --white: #fff;
+
+  --black: #000;
+  --black-less: #333131;
+  --todo-app-dark: #161a2b;
+
+  --placeholder-light: #aaa1a1;
+  --placeholder-dark: #e2e2e2;
+
+  --todo-button-primary: #149fff;
+  --todo-button-secondary: #117aff;
+
+  --todo-row-1-primary: #a3e635;
+  --todo-row-1-secondary: #84cc16;
+
+  --todo-row-2-primary: #90f7ec;
+  --todo-row-2-secondary: #32CCBC;
+
+  --todo-row-3-primary: #fdeb71;
+  --todo-row-3-secondary: #f8d800;
+
+  --todo-row-4-primary: #ce9ffc;
+  --todo-row-4-secondary: #7367f0;
+
+  --danger: #e25858;
+
+
+   --gray-100: #f2f2f2;
   --gray-200: #d9d9d9;
   --gray-300: #808080;
   --gray-400: #333333;
@@ -7,13 +37,6 @@
   --gray-600: #1a1a1a;
   --gray-700: #0d0d0d;
 
-  --blue: #4ea8de;
-  --blue-dark: #1e6f9f;
-
-  --purple: #8284fa;
-  --purple-dark: #5e60ce;
-
-  --danger: #e25858;
 }
 
 * {
@@ -24,9 +47,10 @@
 }
 
 body {
-  background: var(--gray-600);
+  background: var(--todo-app-dark);
   color: var(--gray-100);
   min-height: 100vh;
+  background-attachment: fixed;
 }
 
 button {

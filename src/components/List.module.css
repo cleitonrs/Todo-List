@@ -21,7 +21,7 @@
 }
 
 .created p {
-  color: var(--blue);
+  color: var(--gray-100);
 }
 
 .created span {
@@ -40,7 +40,7 @@
 }
 
 .done p {
-  color: var(--purple);
+  color: var(--gray-100);
 }
 
 .done span {
@@ -59,26 +59,52 @@
 
 .task {
   width: 100%;
-  background: var(--gray-500);
-  border: 1px solid var(--gray-400);
+  background: linear-gradient(
+    90deg,
+    var(--todo-row-4-primary),
+    var(--todo-row-4-secondary));
   padding: 1rem;
   border-radius: 8px;
+  box-shadow: 1px 1px 5px var(--placeholder-dark);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
 }
 
+.task:nth-child(4n + 1) {
+  background: linear-gradient(
+    90deg,
+    var(--todo-row-2-primary),
+    var(--todo-row-2-secondary));
+}
+
+.task:nth-child(4n + 2) {
+  background: linear-gradient(
+    90deg,
+    var(--todo-row-3-primary),
+    var(--todo-row-3-secondary));
+}
+
+.task:nth-child(4n + 3) {
+  background: linear-gradient(
+    90deg,
+    var(--todo-row-1-primary),
+    var(--todo-row-1-secondary));
+}
+
 .task p {
   font-size: 0.875rem;
   line-height: 1.18rem;
-  color: var(--gray-100);
+  color: var(--black-less);
   margin-right: auto;
 }
 
-p.textCompleted {
-  color: var(--gray-300);
+
+.textCompleted {
   text-decoration: line-through;
+  font-style: italic;
+  opacity: 0.3;
 }
 
 .check {
@@ -89,7 +115,7 @@ p.textCompleted {
 .delete {
   background: none;
   border: none;
-  color: var(--gray-300);
+  color: var(--black-less);
 }
 
 .delete:hover {

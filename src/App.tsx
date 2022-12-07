@@ -68,6 +68,13 @@ export function App() {
     <>
       <Header onAddTodo={addTodo} />
       <List todos={todos} onDeleteTodo={deleteTodo} onComplete={toggleCompletedTodo}/>
+      <footer>
+        <p>
+        &copy; 
+        <a href="http://www.github.com/cleitonrs" target="_blank" rel="noreferrer">Cleiton Santos Developer </a>
+        {new Date().getFullYear()}. All rights reserved
+        </p>
+      </footer>
     </>
   )
 }

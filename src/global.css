@@ -47,6 +47,7 @@
 }
 
 body {
+  position: relative;
   background: var(--todo-app-dark);
   color: var(--gray-100);
   min-height: 100vh;
@@ -55,4 +56,24 @@ body {
 
 button {
   cursor: pointer;
+}
+
+footer {
+  width: 100%;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+footer p {
+  margin: 1rem auto;
+  position: absolute;
+  bottom: .2rem;
+  color: var(--gray-200);
+}
+
+a {
+  text-decoration: none;
+  color: var(--background-primary);
 }

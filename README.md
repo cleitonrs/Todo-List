@@ -13,6 +13,7 @@ This project was made with the purpose of practicing React JS and Module CSS. Th
 - CSS Module
 - React-icons
 - uuid
+- Localstorage
 
 ### What I learned
 
